@@ -1,7 +1,8 @@
 let colors = ['rouge', 'vert', 'bleu',"jaune","gris"];
 for (let i = 0; i < colors.length; i++) {
-  console.log("Mon choix n° "+i + " est "+colors[i]);
+  console.log("Mon choix n° "+i + " est "+colors[i]); 
 }
+
 console.log("--------------------")
 
 let tableaucolors=['rouge','vert','bleu','jaune','gris']
