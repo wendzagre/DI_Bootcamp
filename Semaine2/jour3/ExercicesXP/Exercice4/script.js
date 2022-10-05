@@ -15,5 +15,6 @@ let building = {
     },
 }
 console.log(building.numberOfFloors)
+console.log(building.numberOfAptByFloor.secondFloor+","+building.numberOfAptByFloor.thirdFloor)
 console.log(building.nameOfTenants[1])
 console.log(building.numberOfRoomsAndRent.dan)
