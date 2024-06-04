@@ -1,57 +1,60 @@
--- Exercie 1 Bootcamp
--- Création d'une base de données appelée Bootcamp
--- Création d'une table appelée étudiants
-CREATE TABLE students(
-	id_student SERIAL PRIMARY KEY,
-	first_name VARCHAR(25) NOT NULL,
-	last_name VARCHAR(60) NOT NULL,
-	birth_date DATE NOT NULL
-	);
+-- 1-Créez une base de données appelée bootcamp
+CREATE DATABASE bootcamp ;
 
--- Insertion des données dans la base de données
+-- 2-Créez une table appelée étudiants et ajoutons les colonnes suivantes
+CREATE table etudiants (
+  identifiant SERIAL PRIMARY KEY ,
+  nom_famille VARCHAR (50) NOT NULL ,
+  prenom VARCHAR (100) NOT NULL , 
+  Birth_date DATE NOT NULL 
+) ;
 
-INSERT INTO students(
-	first_name,last_name,birth_date
-	) 
-VALUES
-	('Marc','Bénichou','02/11/1998'),
-	('Yann','Cohen','03/12/2010'),
-	('Léa','Bénichou','27/07/1987'),
-	('Amélie','Dux','07/04/1996'),
-	('David','Grez','14/06/2003'),
-	('Omer','Simpson','03/10/1980');
+-- 3-Insérez les données vues ci-dessus dans le tableau des étudiants. Trouvez le moyen le plus efficace d’insérer les données.
+INSERT INTO etudiants (nom_famille,prenom,Birth_date) VALUES 
+('Bénichou','Marc','02/11/1998'),
+('Cohen','Yoan','03/12/2010'),
+('Bénichou','Léa','27/07/1987'),
+('Dux', 'Amélie','04/07/1996'),
+('Grez','David','14/06/2003'),
+('Simpson','Omer','03/10/1980');
 
--- Insertion de mon nom, prénom et date de naissance dans la table des étudiants
-INSERT INTO students(
-	first_name,last_name,birth_date
-	) 
-VALUES
-	('Abdoul Kader','SAWADOGO','05/10/1999');
+ -- 4-Insérez votre nom, prénom et date de naissance dans la table des étudiants (jetez un œil à l'identifiant donné).
+ INSERT INTO etudiants (nom_famille,prenom,Birth_date) VALUES ('ZAGRE','Patrick','7/11/2001') ;
 
--- Les différentes sélections demandées par l'exercice
--- Récupérer toutes les données de la table.
-SELECT * FROM students 
--- Récupérer tous les prénoms et noms de famille des étudiants .
-SELECT first_name,last_name FROM students;
+-- 5-Récupérez toutes les données de la table
+SELECT * FROM etudiants ;
 
--- Pour les questions suivantes, récupérez uniquement les prénoms et noms de famille des élèves.
--- Récupérer l'étudiant dont l'id est égal à 2.
-SELECT first_name,last_name FROM students WHERE id_student = 2;
--- Récupérez l'élève dont le nom est Benichou ET le prénom est Marc.
-SELECT first_name,last_name FROM students WHERE last_name='Benichou' AND first_name='Marc';
--- Récupérez les étudiants dont le nom de famille est Benichou OU dont le prénom est Marc.
-SELECT first_name,last_name FROM students WHERE last_name='Benichou' OR first_name='Marc';
--- Récupérez les étudiants dont les prénoms contiennent la lettre a .
-SELECT first_name,last_name FROM students WHERE  first_name ILIKE '%a%';
+-- 6-Récupère tous les prénoms et noms de famille des étudiants 
+SELECT prenom, nom_famille FROM etudiants ;
+
+-- 7-Pour les questions suivantes, récupérez uniquement les prénoms et noms des étudiants
+ -- Récupère l'étudiant dont l'identifiant est égal à 2 
+ SELECT prenom, nom_famille FROM etudiants WHERE identifiant = 2 ;
+
+ -- Récupérez l'élève dont le nom est Benichou ET le prénom est Marc.
+ SELECT nom_famille, prenom FROM etudiants WHERE nom_famille ='Bénichou'AND prenom ='Marc' ;
+
+ --Récupérez les élèves dont le nom est Benichou OU le prénom est Marc
+SELECT nom_famille,prenom FROM etudiants WHERE nom_famille = 'Bénichou' OR prenom = 'Marc' ;
+
+-- Récupère les étudiants dont le prénom contient la lettre a 
+SELECT nom_famille, prenom FROM etudiants WHERE prenom ILIKE '%a%' ;
+
+-- Récupère les étudiants dont le prénom commence par la lettre a 
+SELECT nom_famille, prenom FROM etudiants WHERE prenom ILIKE 'a%' ;
+
+-- Récupère les étudiants dont le prénom se termine par la lettre a
+SELECT nom_famille, prenom FROM etudiants WHERE prenom ILIKE '%a';
+
+--Récupérez les élèves dont l'avant-dernière lettre de leur prénom est a (Exemple : Le a h)
+SELECT nom_famille, prenom FROM etudiants WHERE prenom ILIKE '%a-';
+
+-- Récupère les étudiants dont les identifiants sont égaux à 1 AND 3 
+SELECT nom_famille,prenom FROM etudiants WHERE identifiant IN (1,3);
+
+--8-Récupère les étudiants dont les dates de naissance sont égales ou postérieures au 01/01/2000
+SELECT *FROM etudiants WHERE Birth_date >= '01/01/2000' ;
 
 
--- Récupérez les étudiants dont le prénom commence par la lettre a .
-SELECT first_name,last_name FROM students WHERE  first_name ILIKE 'a%';
--- Récupérer les étudiants dont les prénoms se terminent par la lettre a .
-SELECT first_name,last_name FROM students WHERE  first_name ILIKE '%a';
--- Récupérer les étudiants dont l'avant-dernière lettre de leur prénom est a (Exemple : Le a h).
-SELECT first_name,last_name FROM students WHERE  first_name ILIKE '%a-';
--- Récupérer les étudiants dont les identifiants sont égaux à 1 AND 3 .
-SELECT first_name,last_name FROM students WHERE  id_student = 1 AND id_student = 3;
--- Récupérez les étudiants dont la date de naissance est égale ou postérieure au 01/01/2000. (afficher toutes leurs informations).
-SELECT * FROM students WHERE  birth_date >= '01/01/2000';
+
+
