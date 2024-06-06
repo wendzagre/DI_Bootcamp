@@ -1,11 +1,9 @@
+-- Comptez combien d’acteurs sont dans le tableau.
+SELECT COUNT (*) FROM acteurs ;
 
-SELECT COUNT(*) FROM actors;
--- Essayons d'ajouter un nouvel acteur avec des champs vides. 
-INSERT INTO actors (
-	first_name, last_name, age, number_oscars
-	) 
-VALUES
-('','','', NULL
-);
--- Que pensez-vous que le résultat sera?
--- Nous pensons que y'aura une erreur car nous avons spécifier lors de la création que les valeurs ne doivent pas être nulles.
+-- Essayez d'ajouter un nouvel acteur avec des champs vides. 
+INSERT INTO actors (first_name, last_name, age, number_oscars)
+VALUES(NULL,NULL,NULL,NULL);
+
+-- Selon vous, quel sera le résultat ?
+-- Résultat : Erreur, les champs ne peuvent pas être NULL.

@@ -6,11 +6,11 @@ CREATE table etudiants (
   identifiant SERIAL PRIMARY KEY ,
   nom_famille VARCHAR (50) NOT NULL ,
   prenom VARCHAR (100) NOT NULL , 
-  Birth_date DATE NOT NULL 
+  birth_date DATE NOT NULL 
 ) ;
 
 -- 3-Insérez les données vues ci-dessus dans le tableau des étudiants. Trouvez le moyen le plus efficace d’insérer les données.
-INSERT INTO etudiants (nom_famille,prenom,Birth_date) VALUES 
+INSERT INTO etudiants (nom_famille,prenom,birth_date) VALUES 
 ('Bénichou','Marc','02/11/1998'),
 ('Cohen','Yoan','03/12/2010'),
 ('Bénichou','Léa','27/07/1987'),
@@ -19,7 +19,7 @@ INSERT INTO etudiants (nom_famille,prenom,Birth_date) VALUES
 ('Simpson','Omer','03/10/1980');
 
  -- 4-Insérez votre nom, prénom et date de naissance dans la table des étudiants (jetez un œil à l'identifiant donné).
- INSERT INTO etudiants (nom_famille,prenom,Birth_date) VALUES ('ZAGRE','Patrick','7/11/2001') ;
+ INSERT INTO etudiants (nom_famille,prenom,birth_date) VALUES ('ZAGRE','Patrick','7/11/2001') ;
 
 -- 5-Récupérez toutes les données de la table
 SELECT * FROM etudiants ;
@@ -53,7 +53,11 @@ SELECT nom_famille, prenom FROM etudiants WHERE prenom ILIKE '%a-';
 SELECT nom_famille,prenom FROM etudiants WHERE identifiant IN (1,3);
 
 --8-Récupère les étudiants dont les dates de naissance sont égales ou postérieures au 01/01/2000
-SELECT *FROM etudiants WHERE Birth_date >= '01/01/2000' ;
+SELECT *FROM etudiants WHERE birth_date >= '01/01/2000' ;
+
+
+
+
 
 
 
