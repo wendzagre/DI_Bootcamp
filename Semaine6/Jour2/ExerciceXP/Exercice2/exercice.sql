@@ -1,9 +1,12 @@
---Ecrivons une requête pour sélectionner toutes les colonnes de la table << client >>
+-- Ecrivons une requête pour sélectionner toutes les colonnes de la table << client >>
 SELECT *FROM customer ; 
+
 -- Ecrivons une requête pour afficher les noms ( first_name , last_name ) en utilisant un alias nommé « full_name ».
 SELECT (first_name, last_name) as full_name FROM customer ; 
--- Permet d'obtenir toutes les dates auxquelles les comptes ont été créés. Écrivez une requête pour sélectionner tous les create_date de la table « client » (il ne doit pas y avoir de doublons).
-SELECT DISTINCT create_date FROM customer;
+
+-- Écrivons une requête pour sélectionner toutes les dates de création de la table « client » (il ne doit pas y avoir de doublons).
+SELECT distinct create_date FROM customer ; 
+
 -- Écrivez une requête pour obtenir tous les détails du client à partir de la table des clients, elle doit être affichée dans l'ordre décroissant de leur prénom.
 SELECT * FROM customer ORDER BY first_name DESC;
 -- Rédigez une requête pour obtenir l'ID du film, le titre, la description, l'année de sortie et le tarif de location par ordre croissant en fonction de leur tarif de location.
