@@ -7,8 +7,12 @@ SELECT (first_name, last_name) as full_name FROM customer ;
 -- Écrivons une requête pour sélectionner toutes les dates de création de la table « client » (il ne doit pas y avoir de doublons).
 SELECT distinct create_date FROM customer ; 
 
--- Écrivez une requête pour obtenir tous les détails du client à partir de la table des clients, elle doit être affichée dans l'ordre décroissant de leur prénom.
-SELECT * FROM customer ORDER BY first_name DESC;
+-- Ecrivons une requête pour obtenir tous les détails du client à partir de la table client, ils doivent être affichés par ordre décroissant par leur prénom
+SELECT customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, 
+last_update, active FROM customer ORDER BY last_name DESC; 
+
+
+
 -- Rédigez une requête pour obtenir l'ID du film, le titre, la description, l'année de sortie et le tarif de location par ordre croissant en fonction de leur tarif de location.
 SELECT film_id,title,description,release_year,rental_rate FROM film ORDER BY rental_rate ASC;
 -- Écrivez une requête pour obtenir l'adresse et le numéro de téléphone de tous les clients vivant dans le district du Texas, ces détails peuvent être trouvés dans le tableau "adresse".
