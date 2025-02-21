@@ -11,10 +11,10 @@ SELECT distinct create_date FROM customer ;
 SELECT customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, 
 last_update, active FROM customer ORDER BY last_name DESC; 
 
+-- Erivons une requête pour obtenir l'ID du film, le titre, la description, l'année de sortie et le tarif de location par ordre croissant en fonction de leur tarif de location.
+SELECT film_id, title, description, release_year, rental_rate FROM film ORDER BY rental_rate ASC;
 
 
--- Rédigez une requête pour obtenir l'ID du film, le titre, la description, l'année de sortie et le tarif de location par ordre croissant en fonction de leur tarif de location.
-SELECT film_id,title,description,release_year,rental_rate FROM film ORDER BY rental_rate ASC;
 -- Écrivez une requête pour obtenir l'adresse et le numéro de téléphone de tous les clients vivant dans le district du Texas, ces détails peuvent être trouvés dans le tableau "adresse".
 SELECT address,phone FROM address WHERE district='Texas';
 -- Écrivez une requête pour récupérer tous les détails du film où l'identifiant du film est 15 ou 150.
