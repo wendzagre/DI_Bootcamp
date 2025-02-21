@@ -1,5 +1,5 @@
--- Dans la base de données dvdrental, écrivez une requête pour sélectionner toutes les colonnes de la table « client ».
-SELECT * FROM customer;
+--Ecrivons une requête pour sélectionner toutes les colonnes de la table client 
+SELECT *FROM customer ; 
 -- Écrivez une requête pour afficher les noms ( first_name , last_name ) en utilisant un alias nommé « full_name ».
 SELECT (first_name, last_name) as full_name FROM customer;
 -- Permet d'obtenir toutes les dates auxquelles les comptes ont été créés. Écrivez une requête pour sélectionner tous les create_date de la table « client » (il ne doit pas y avoir de doublons).
